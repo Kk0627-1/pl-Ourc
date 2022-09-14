@@ -234,6 +234,9 @@ unsigned_unary_exp
     | Constant 
     | '(' expression ')'
 
+
+
+
 3、  錯誤情況
 根據錯誤我們分成3種情況
 1. lexical error 不存在的token
@@ -244,4 +247,9 @@ unsigned_unary_exp
 1、 lexical error
 
    ![image](https://user-images.githubusercontent.com/55129180/190058033-025c0583-ad4e-466f-a2da-7cc49766fa2a.png)
+   
+2、 syntactical error
+
+   ![image](https://user-images.githubusercontent.com/55129180/190058420-ffe8876f-a03f-4f83-bef4-636d0492c19f.png)
+
 
