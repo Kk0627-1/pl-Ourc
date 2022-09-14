@@ -140,49 +140,81 @@ maybe_bit_OR_exp
 rest_of_maybe_bit_OR_exp 
     : rest_of_maybe_bit_ex_OR_exp { '|' maybe_bit_ex_OR_exp }
 
+
+
 maybe_bit_ex_OR_exp 
     : maybe_bit_AND_exp { '^' maybe_bit_AND_exp }
+    
+    
 rest_of_maybe_bit_ex_OR_exp 
     : rest_of_maybe_bit_AND_exp { '^' maybe_bit_AND_exp }
 
+
+
 maybe_bit_AND_exp 
     : maybe_equality_exp { '&' maybe_equality_exp }
+    
+    
 rest_of_maybe_bit_AND_exp 
     : rest_of_maybe_equality_exp { '&' maybe_equality_exp }
+
+
 
 maybe_equality_exp 
     : maybe_relational_exp 
       { ( EQ | NEQ ) maybe_relational_exp}
+      
+      
 rest_of_maybe_equality_exp 
     : rest_of_maybe_relational_exp 
       { ( EQ | NEQ ) maybe_relational_exp }
+      
+      
 
 maybe_relational_exp 
     : maybe_shift_exp 
       { ( '<' | '>' | LE | GE ) maybe_shift_exp }
+      
+      
 rest_of_maybe_relational_exp 
     : rest_of_maybe_shift_exp 
       { ( '<' | '>' | LE | GE ) maybe_shift_exp }
+      
+      
 
 maybe_shift_exp 
     : maybe_additive_exp { ( LS | RS ) maybe_additive_exp }
+    
+    
 rest_of_maybe_shift_exp 
     : rest_of_maybe_additive_exp { ( LS | RS ) maybe_additive_exp }
+    
+    
 
 maybe_additive_exp 
     : maybe_mult_exp { ( '+' | '-' ) maybe_mult_exp }
+    
+    
 rest_of_maybe_additive_exp 
     : rest_of_maybe_mult_exp { ( '+' | '-' ) maybe_mult_exp }
+    
+    
 
 maybe_mult_exp 
     : unary_exp rest_of_maybe_mult_exp
+    
+    
 rest_of_maybe_mult_exp 
     : { ( '*' | '/' | '%' ) unary_exp }  /* could be empty ! */
+    
+    
 
 unary_exp
     : sign { sign } signed_unary_exp
     | unsigned_unary_exp
     | ( PP | MM ) Identifier [ '[' expression ']' ]
+    
+    
 
 signed_unary_exp
     : Identifier [ '(' [ actual_parameter_list ] ')' 
@@ -191,6 +223,8 @@ signed_unary_exp
                  ]
     | Constant 
     | '(' expression ')'
+    
+    
 
 unsigned_unary_exp
     : Identifier [ '(' [ actual_parameter_list ] ')' 
