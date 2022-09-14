@@ -4260,17 +4260,18 @@ void Project::Is_Statement( bool & correct, bool & Is_Get ) {
       } // if
       
       else {
-      	if ( strcmp( expression_value1.token.c_str(), "false" ) == 0 ) {
-      	  m_shouldnot_operator_list2.push_back( true ) ;
-		} // if
-		
-		else m_shouldnot_operator_list2.push_back( false ) ;
 		
 		// m_shouldnot_operator = true;
         PeekToken();
         token = m_peek_token;
         if ( strcmp( token.token.c_str(), ")" ) == 0 ) {
           GetToken( token );
+          if ( strcmp( expression_value1.token.c_str(), "false" ) == 0 ) {
+      	    m_shouldnot_operator_list2.push_back( true ) ;
+		  } // if
+		
+		  else m_shouldnot_operator_list2.push_back( false ) ;
+		  
           Is_Statement( statement_Correct, statement_Is_Get );
           m_shouldnot_operator_list2.erase( m_shouldnot_operator_list2.end() );
           // m_shouldnot_operator = false;
@@ -4281,16 +4282,17 @@ void Project::Is_Statement( bool & correct, bool & Is_Get ) {
           else {
             PeekToken();
             token = m_peek_token;
-            if ( strcmp( expression_value1.token.c_str(), "true" ) == 0 ) {
-              m_shouldnot_operator_list2.push_back( true ) ;
-			} // if
-			
-			else m_shouldnot_operator_list2.push_back( false ) ;
 			// m_shouldnot_operator = true;
             if ( strcmp( token.type.c_str(), "ELSE" ) == 0 ) {
               GetToken( token );
               // for function_data's space
               m_space_num = m_space_num + 2;
+              if ( strcmp( expression_value1.token.c_str(), "true" ) == 0 ) {
+                m_shouldnot_operator_list2.push_back( true ) ;
+			  } // if
+			
+			  else m_shouldnot_operator_list2.push_back( false ) ;
+              
               Is_Statement( statement_Correct, statement_Is_Get );
               m_shouldnot_operator_list2.erase( m_shouldnot_operator_list2.end() );
               // m_shouldnot_operator = false;
@@ -8075,4 +8077,3 @@ int main() {
   // cout << "kevin\n";
   
 } // main()
-
