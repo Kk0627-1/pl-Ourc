@@ -234,3 +234,13 @@ unsigned_unary_exp
     | Constant 
     | '(' expression ')'
 
+3、  錯誤情況
+根據錯誤我們分成3種情況
+1. lexical error 不存在的token
+2. syntactical error 文法錯誤
+3.  semantic error  使用未定義的identifier做計算
+
+
+1.  lexical error
+   ![image](https://user-images.githubusercontent.com/55129180/190058033-025c0583-ad4e-466f-a2da-7cc49766fa2a.png)
+
