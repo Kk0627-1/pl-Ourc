@@ -252,4 +252,8 @@ unsigned_unary_exp
 
    ![image](https://user-images.githubusercontent.com/55129180/190058420-ffe8876f-a03f-4f83-bef4-636d0492c19f.png)
 
+3、 semantic error
+
+   ![image](https://user-images.githubusercontent.com/55129180/190058589-521f3d8d-9937-46b2-89ba-c6530538ef48.png)
+
 
