@@ -13,6 +13,8 @@
 
 2、 文法檢查
 
+以學校提供的文法為模本,已成事實作出來,以recursive descend parsing algorithm的方法
+
 user_input 
     : ( definition | statement ) { definition | statement }
 
