@@ -265,3 +265,6 @@ unsigned_unary_exp
    ![image](https://user-images.githubusercontent.com/55129180/190058589-521f3d8d-9937-46b2-89ba-c6530538ef48.png)
 
 
+
+4、 實際執行
+
